@@ -5,11 +5,6 @@ pipeline {
             label 'SLAVE01'
         }
     }
-
-    tools { 
-        maven 'maven3' 
-    }
-
     options {
         buildDiscarder logRotator( 
                     daysToKeepStr: '15', 
