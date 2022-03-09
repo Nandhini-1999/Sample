@@ -1,10 +1,7 @@
 pipeline {
 
-    agent {
-        node {
-            label 'SLAVE01'
-        }
-    }
+    agent any {
+        
     options {
         buildDiscarder logRotator( 
                     daysToKeepStr: '15', 
