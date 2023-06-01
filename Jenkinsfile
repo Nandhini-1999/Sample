@@ -1,19 +1,20 @@
-@Library('test-shared-library-form') _
-
-
-pipeline {
-    agent any
-
-    stages {
-        stage('Checkout') {
-            steps {
-                checkout(stageParams: [
-                    branch: 'main',
-                    url: 'https://github.com/example/repository.git'
-                ])
-            }
-        }
-        // Add more stages as needed
+pipeline{
+  agent any
+  
+  stages{
+    //stage('Checkout') {
+     //steps{
+        //git credentialsId: 'jyothi', url: 'git@github.com:jyothiswaroopreddy08/devops-project.git'
+      //}
+     //}
+  stage('Build'){
+      steps{
+        echo "mvn install"
+      }
     }
-}
-
+    
+    stage('Test'){
+      steps{
+        echo "mvn test"
+      }
+    }
