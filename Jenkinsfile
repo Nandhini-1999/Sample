@@ -1,3 +1,5 @@
+@Library('sh-lib') _
+
 pipeline{
   agent any
   
